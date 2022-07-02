@@ -1,9 +1,11 @@
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Pressable} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
 interface AdItemProps {
   item: {
@@ -19,11 +21,19 @@ interface AdItemProps {
   };
 }
 
+type RootStackParamList = {
+  AdInfo: {id: string};
+};
+
 const AdListItem = (props: AdItemProps) => {
   const {item} = props;
+  const navigation =
+    useNavigation<NativeStackNavigationProp<RootStackParamList>>();
 
   return (
-    <View style={styles.container}>
+    <Pressable
+      style={styles.container}
+      onPress={() => navigation.navigate('AdInfo', {id: item?.id})}>
       <View>
         <Image
           source={{
@@ -68,7 +78,7 @@ const AdListItem = (props: AdItemProps) => {
       <Text numberOfLines={1} style={styles.address}>
         san luis potosi, san luis potosi{' '}
       </Text>
-    </View>
+    </Pressable>
   );
 };
 

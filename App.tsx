@@ -12,8 +12,7 @@ import {View, StatusBar, useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import AdListItem from './src/components/AdListItem';
-import AdInfoScreen from './src/screens/AdInfoScreen';
+import Navigation from './src/navigation';
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -24,11 +23,8 @@ const App: () => Node = () => {
 
   return (
     <NavigationContainer>
-      <View style={backgroundStyle}>
-        <AdInfoScreen />
-
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      </View>
+      <Navigation />
+      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
     </NavigationContainer>
   );
 };

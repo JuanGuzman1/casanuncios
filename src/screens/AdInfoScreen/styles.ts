@@ -12,12 +12,12 @@ const styles = StyleSheet.create({
   heartIcon: {
     position: 'absolute',
     right: 10,
-    top: 40,
+    top: 30,
   },
   backIcon: {
     position: 'absolute',
     left: 10,
-    top: 40,
+    top: 30,
   },
   title: {
     fontWeight: '500',
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
   },
   contactContainer: {
     paddingTop: 10,
-    marginBottom: 30,
+    marginBottom: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -69,16 +69,12 @@ const styles = StyleSheet.create({
   iconsContactContainer: {
     flexDirection: 'row',
   },
-  whatsAppContainer: {
-    backgroundColor: 'green',
-    padding: 10,
-    borderRadius: 10,
-    marginRight: 5,
-  },
-  mailContainer: {
-    backgroundColor: 'orange',
-    padding: 10,
-    borderRadius: 10,
+  iconContainer: {
+    width: 45,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 45,
+    borderRadius: 22,
     marginRight: 10,
   },
 });
