@@ -5,6 +5,7 @@ import HomeScreen from '../screens/HomeScreen';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import AdInfoScreen from '../screens/AdInfoScreen';
 import ChatScreen from '../screens/Chat/ChatScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -57,7 +58,7 @@ const NavigationBottom = () => {
       />
       <Tab.Screen
         name="profile"
-        component={HomeScreen}
+        component={ProfileScreen}
         options={{
           title: 'Perfil',
           headerShown: false,

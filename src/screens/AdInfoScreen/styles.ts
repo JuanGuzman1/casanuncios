@@ -5,10 +5,6 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  image: {
-    width: '100%',
-    aspectRatio: 12 / 9,
-  },
   heartIcon: {
     position: 'absolute',
     right: 10,

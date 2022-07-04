@@ -7,6 +7,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
+import Carousel from './Carousel';
 
 const AdInfoScreen = () => {
   const navigation = useNavigation();
@@ -15,11 +16,11 @@ const AdInfoScreen = () => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={{flexGrow: 1}}>
         {/* Header */}
-        <Image
-          source={{
-            uri: 'https://www.construyehogar.com/wp-content/uploads/2014/08/Dise%C3%B1o-de-casa-moderna-de-una-planta.jpg',
-          }}
-          style={styles.image}
+        <Carousel
+          images={[
+            'https://www.construyehogar.com/wp-content/uploads/2014/08/Dise%C3%B1o-de-casa-moderna-de-una-planta.jpg',
+            'https://img10.naventcdn.com/avisos/18/00/60/00/21/19/720x532/277965750.jpg'
+          ]}
         />
 
         {/* top icons */}
@@ -82,7 +83,7 @@ const AdInfoScreen = () => {
             <FontAwesome name="whatsapp" size={30} color={'white'} />
           </View>
           <View style={[styles.iconContainer, {backgroundColor: 'orange'}]}>
-            <Ionicons name="chatbox" size={30} color={'white'} />
+            <Ionicons name="ios-chatbubble-ellipses" size={30} color={'white'} />
           </View>
         </View>
       </View>
