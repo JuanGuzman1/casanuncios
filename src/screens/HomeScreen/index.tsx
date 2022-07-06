@@ -1,10 +1,11 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 import AdListItem from '../../../src/components/AdListItem';
+import styles from './styles';
 
 const HomeScreen = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.container}>
       <AdListItem />
       <AdListItem />
       <AdListItem />

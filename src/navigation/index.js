@@ -5,7 +5,8 @@ import HomeScreen from '../screens/HomeScreen';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import AdInfoScreen from '../screens/AdInfoScreen';
 import ChatScreen from '../screens/Chat/ChatScreen';
-import ProfileScreen from '../screens/ProfileScreen';
+import ProfileScreen from '../screens/Profile/ProfileScreen';
+import HomeHeader from './HomeHeader';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,13 +23,13 @@ const Tab = createBottomTabNavigator();
 
 const NavigationBottom = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator screenOptions={{tabBarActiveTintColor: '#ff8b14'}}>
       <Tab.Screen
         name="HomeBottom"
         component={HomeScreen}
         options={{
           title: 'Inicio',
-          headerShown: false,
+          header: () => <HomeHeader />,
           tabBarIcon: ({color}) => (
             <AntDesign name="home" size={25} color={color} />
           ),
