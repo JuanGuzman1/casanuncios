@@ -5,7 +5,7 @@ import styles from './styles';
 const ChatScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Tus conversaciones apareceran aqui.</Text>
+      <Text style={styles.text}>Tus conversaciones aparecerán aquí.</Text>
     </View>
   );
 };

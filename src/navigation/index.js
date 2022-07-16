@@ -1,20 +1,41 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import HomeScreen from '../screens/HomeScreen';
+import HomeScreen from '../screens/Home/HomeScreen';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import AdInfoScreen from '../screens/AdInfoScreen';
+import AdInfoScreen from '../screens/Ad/AdInfoScreen';
 import ChatScreen from '../screens/Chat/ChatScreen';
 import ProfileScreen from '../screens/Profile/ProfileScreen';
 import HomeHeader from './HomeHeader';
+import AdUploadScreen from '../screens/Ad/AdUploadScreen';
+import {colors} from '../assets/colors';
 
 const Stack = createNativeStackNavigator();
 
 const Navigation = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="Home" component={NavigationBottom} />
-      <Stack.Screen name="AdInfo" component={AdInfoScreen} />
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Home"
+        component={NavigationBottom}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AdInfo"
+        component={AdInfoScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AdUpload"
+        component={AdUploadScreen}
+        options={{
+          title: 'Nueva publicacion',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: colors.primary,
+          },
+        }}
+      />
     </Stack.Navigator>
   );
 };
@@ -23,7 +44,7 @@ const Tab = createBottomTabNavigator();
 
 const NavigationBottom = () => {
   return (
-    <Tab.Navigator screenOptions={{tabBarActiveTintColor: '#ff8b14'}}>
+    <Tab.Navigator screenOptions={{tabBarActiveTintColor: colors.primary}}>
       <Tab.Screen
         name="HomeBottom"
         component={HomeScreen}

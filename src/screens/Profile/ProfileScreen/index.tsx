@@ -1,11 +1,27 @@
-import {View, Text, Image} from 'react-native';
+import {View, Text, Image, Pressable, ScrollView} from 'react-native';
 import React from 'react';
 import styles from './styles';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+
+type ParamList = {
+  AdUpload:
+    | {
+        id: string | undefined;
+      }
+    | undefined;
+};
 
 const ProfileScreen = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<ParamList>>();
+
+  const onPressPublish = () => {
+    navigation.navigate('AdUpload');
+  };
+
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <FontAwesome
         name="pencil-square-o"
         size={28}
@@ -19,9 +35,9 @@ const ProfileScreen = () => {
         }}
       />
       <Text style={styles.name}>Jose Juan Guzman Vargas</Text>
-      <View style={styles.publishButton}>
+      <Pressable onPress={onPressPublish} style={styles.publishButton}>
         <Text style={styles.publishButtonText}>Publica gratis</Text>
-      </View>
+      </Pressable>
       <Text style={styles.label}>Información personal</Text>
       <View style={styles.item}>
         <Text style={styles.labelItem}>Correo electronico</Text>
@@ -31,7 +47,21 @@ const ProfileScreen = () => {
         <Text style={styles.labelItem}>Numero de celular</Text>
         <Text style={styles.text}>+524444927028</Text>
       </View>
-    </View>
+      <View style={styles.item}>
+        <Text style={styles.labelItem}>Estado</Text>
+        <Text style={styles.text}>San Luis Potosi</Text>
+      </View>
+      <View style={styles.item}>
+        <Text style={styles.labelItem}>Ciudad</Text>
+        <Text style={styles.text}>Ciudad Valles</Text>
+      </View>
+      <Pressable style={styles.bottomButton}>
+        <Text style={styles.myPublishesText}>Ver mis publicaciones (2)</Text>
+      </Pressable>
+      <Pressable style={styles.bottomButton}>
+        <Text style={styles.signOutText}>Cerrar sesión</Text>
+      </Pressable>
+    </ScrollView>
   );
 };
 

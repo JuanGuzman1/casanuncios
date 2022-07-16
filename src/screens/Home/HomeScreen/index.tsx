@@ -1,6 +1,6 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-import AdListItem from '../../../src/components/AdListItem';
+import AdListItem from '../../../components/AdListItem';
 import styles from './styles';
 
 const HomeScreen = () => {
