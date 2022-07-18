@@ -29,7 +29,7 @@ const Navigation = () => {
         name="AdUpload"
         component={AdUploadScreen}
         options={{
-          title: 'Nueva publicacion',
+          title: 'Nueva publicación',
           headerTintColor: 'white',
           headerStyle: {
             backgroundColor: colors.primary,
@@ -61,7 +61,8 @@ const NavigationBottom = () => {
         component={HomeScreen}
         options={{
           title: 'Favoritos',
-          headerShown: false,
+          headerShown: true,
+          // headerTransparent: true,
           tabBarIcon: ({color}) => (
             <AntDesign name="hearto" size={25} color={color} />
           ),
@@ -83,7 +84,7 @@ const NavigationBottom = () => {
         component={ProfileScreen}
         options={{
           title: 'Perfil',
-          headerShown: false,
+          headerShown: true,
           tabBarIcon: ({color}) => (
             <AntDesign name="user" size={25} color={color} />
           ),
